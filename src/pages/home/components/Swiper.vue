@@ -53,3 +53,6 @@ components:{
     width: 100%;
 
 </style>
+//  height 0
+//  padding-bottom 31.25%
+//  解决网速较慢时图片加载过慢出现的抖动问题，先撑开一个高度

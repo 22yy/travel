@@ -3,11 +3,13 @@
   <div>
     <Header/>
     <Swiper/>
+    <Icons/>
   </div>
 </template>
 
 <script>
 import Header from './components/Header.vue'
+import Icons from './components/Icons.vue'
 import Swiper from './components/Swiper.vue'
 export default {
 name:'Home',
@@ -17,7 +19,8 @@ name:'Home',
   },
   components:{
     Header,
-    Swiper
+    Swiper,
+    Icons
   },
 }
 </script>
