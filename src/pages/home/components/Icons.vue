@@ -9,7 +9,7 @@
               alt=""
             />
           </div>
-          <p class="icon-info">{{item.info}}</p>
+          <p class="icon-desc">{{item.desc}}</p>
         </div>
       </swiper-slide>
     </swiper>
@@ -28,50 +28,50 @@ export default {
           id: "0001",
           imgURL:
             "http://img1.qunarzz.com/piao/fusion/1611/54/ace00878a52d9702.png",
-          info: "热门景点",
+          desc: "热门景点热门景点热门景点热门景点热门景点热门景点热门景点热门景点",
         },
         {
           id: "0002",
           imgURL:
             "http://img1.qunarzz.com/piao/fusion/1711/df/86cbcfc533330d02.png",
-          info: "泡温泉",
+          desc: "泡温泉",
         },
         {
           id: "0003",
           imgURL:
             "http://img1.qunarzz.com/piao/fusion/1711/df/86cbcfc533330d02.png",
-          info: "泡温泉",
+          desc: "泡温泉",
         },
         {
           id: "0004",
           imgURL:
             "http://img1.qunarzz.com/piao/fusion/1711/df/86cbcfc533330d02.png",
-          info: "泡温泉",
+          desc: "泡温泉",
         },{
           id: "0005",
           imgURL:
             "http://img1.qunarzz.com/piao/fusion/1711/df/86cbcfc533330d02.png",
-          info: "泡温泉",
+          desc: "泡温泉",
         },{
           id: "0006",
           imgURL:
             "http://img1.qunarzz.com/piao/fusion/1711/df/86cbcfc533330d02.png",
-          info: "泡温泉",
+          desc: "泡温泉",
         },{
           id: "0007",
           imgURL:
             "http://img1.qunarzz.com/piao/fusion/1711/df/86cbcfc533330d02.png",
-          info: "泡温泉",
+          desc: "泡温泉",
         },{
           id: "0008",
           imgURL:
             "http://img1.qunarzz.com/piao/fusion/1711/df/86cbcfc533330d02.png",
-          info: "泡温泉",
+          desc: "泡温泉",
         },{
           id: "0009",
           imgURL:
             "http://img1.qunarzz.com/piao/fusion/1711/df/86cbcfc533330d02.png",
-          info: "滑雪",
+          desc: "滑雪",
         },
       ],
       swiperOption: {
@@ -111,6 +111,7 @@ export default {
   // background pink
   height: 0;
   padding-bottom: 50%;
+  margin-top :.1rem
 
   .icon {
     float: left;
@@ -136,7 +137,7 @@ export default {
       display: block;
     }
 
-    .icon-info {
+    .icon-desc {
       position: absolute;
       bottom: 0;
       left: 0;
