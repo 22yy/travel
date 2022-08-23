@@ -2,11 +2,13 @@
 <template>
   <div>
    <Header></Header>
+   <Search></Search>
   </div>
 </template>
 
 <script>
-import Header from '../city/components/Header.vue'
+import Header from './components/Header.vue'
+import Search from './components/Search.vue'
 export default {
 name:'City',
   data () {
@@ -14,7 +16,8 @@ name:'City',
     }
   },
   components:{
-    Header
+    Header,
+    Search
   },
 }
 </script>
