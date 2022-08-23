@@ -3,8 +3,8 @@
   <div class="recommend">
    <div class="title">热销推荐</div>
    <ul>
-    <li class="item border-bottom" v-for="item in itemList" :key="item.id">
-      <img :src="item.imgURL" alt="" class="item-img">
+    <li class="item border-bottom" v-for="item in recommendList" :key="item.id">
+      <img :src="item.imgUrl" alt="" class="item-img">
       <div class="item-info">
         <p class="item-title">{{item.title}}</p>
         <p class="item-desc">{{item.desc}}</p>
@@ -19,31 +19,9 @@
 
 export default {
 name:'Recommend',
-  data () {
-    return {
-      itemList :[{
-        id:'0001',
-        imgURL:'http://img1.qunarzz.com/sight/p0/1409/19/adca619faaab0898245dc4ec482b5722.jpg_140x140_80f63803.jpg',
-        title:'大连生涯海洋世界',
-        desc:'浪漫大连首战，浪漫大连首战浪漫大连首战，浪漫大连首战浪漫大连首战，浪漫大连首战浪漫大连首战，浪漫大连首战浪漫大连首战，浪漫大连首战'
-      },
-      {
-        id:'0002',
-        imgURL:'http://img1.qunarzz.com/sight/p0/1409/19/adca619faaab0898245dc4ec482b5722.jpg_140x140_80f63803.jpg',
-        title:'大连生涯海洋世界',
-        desc:'浪漫大连首战，浪漫大连首战浪漫大连首战，浪漫大连首战浪漫大连首战，浪漫大连首战浪漫大连首战，浪漫大连首战浪漫大连首战，浪漫大连首战'
-      },
-      {
-        id:'0003',
-        imgURL:'http://img1.qunarzz.com/sight/p0/1409/19/adca619faaab0898245dc4ec482b5722.jpg_140x140_80f63803.jpg',
-        title:'大连生涯海洋世界',
-        desc:'浪漫大连首战，浪漫大连首战浪漫大连首战，浪漫大连首战浪漫大连首战，浪漫大连首战浪漫大连首战，浪漫大连首战浪漫大连首战，浪漫大连首战'
-      }
-      ]
-    }
-  },
-  components:{
-  },
+props:{
+  recommendList:Array
+},
 }
 </script>
 

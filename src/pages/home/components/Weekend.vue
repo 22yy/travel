@@ -3,9 +3,9 @@
   <div>
      <div class="title">周末去哪</div>
    <ul>
-    <li class="item border-bottom" v-for="item in itemList" :key="item.id">
+    <li class="item border-bottom" v-for="item in weekendList" :key="item.id">
       <div class="item-img-wapper">
-         <img :src="item.imgURL" alt="" class="item-img">
+         <img :src="item.imgUrl" alt="" class="item-img">
       </div>
       
       <div class="item-info">
@@ -20,32 +20,9 @@
 <script>
 export default {
 name:'Weekend',
-  data () {
-    return {
-      itemList:[
-        {
-        id:'0001',
-        imgURL:'http://img1.qunarzz.com/sight/source/1510/6e/1ea71e2f04e.jpg_r_640x214_aa6f091d.jpg',
-        title:'大连生涯海洋世界',
-        desc:'浪漫大连首战'
-      },
-       {
-        id:'0002',
-        imgURL:'http://img1.qunarzz.com/sight/source/1510/6e/1ea71e2f04e.jpg_r_640x214_aa6f091d.jpg',
-        title:'大连生涯海洋世界',
-        desc:'浪漫大连首战'
-      },
-       {
-        id:'0003',
-        imgURL:'http://img1.qunarzz.com/sight/source/1510/6e/1ea71e2f04e.jpg_r_640x214_aa6f091d.jpg',
-        title:'大连生涯海洋世界',
-        desc:'浪漫大连首战'
-      },
-      ]
-    }
-  },
-  components:{
-  },
+props:{
+  weekendList:Array
+},
 }
 </script>
 
@@ -54,7 +31,6 @@ name:'Weekend',
 .title
   background #eee
   text-indent .2rem
-  margin-top .2rem
   line-height .8rem
   font-size: .28rem
 .item-img-wrapper

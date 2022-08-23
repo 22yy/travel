@@ -5,7 +5,7 @@
         <div class="icon" v-for="item of page" :key="item.id">
           <div class="icon-img">
             <img
-              :src='item.imgURL'
+              :src='item.imgUrl'
               alt=""
             />
           </div>
@@ -21,59 +21,11 @@ import { swiper, swiperSlide } from "vue-awesome-swiper";
 import "swiper/dist/css/swiper.css";
 export default {
   name: "Icons",
+  props:{
+    iconList:Array
+  },
   data() {
     return {
-      iconsList: [
-        {
-          id: "0001",
-          imgURL:
-            "http://img1.qunarzz.com/piao/fusion/1611/54/ace00878a52d9702.png",
-          desc: "热门景点热门景点热门景点热门景点热门景点热门景点热门景点热门景点",
-        },
-        {
-          id: "0002",
-          imgURL:
-            "http://img1.qunarzz.com/piao/fusion/1711/df/86cbcfc533330d02.png",
-          desc: "泡温泉",
-        },
-        {
-          id: "0003",
-          imgURL:
-            "http://img1.qunarzz.com/piao/fusion/1711/df/86cbcfc533330d02.png",
-          desc: "泡温泉",
-        },
-        {
-          id: "0004",
-          imgURL:
-            "http://img1.qunarzz.com/piao/fusion/1711/df/86cbcfc533330d02.png",
-          desc: "泡温泉",
-        },{
-          id: "0005",
-          imgURL:
-            "http://img1.qunarzz.com/piao/fusion/1711/df/86cbcfc533330d02.png",
-          desc: "泡温泉",
-        },{
-          id: "0006",
-          imgURL:
-            "http://img1.qunarzz.com/piao/fusion/1711/df/86cbcfc533330d02.png",
-          desc: "泡温泉",
-        },{
-          id: "0007",
-          imgURL:
-            "http://img1.qunarzz.com/piao/fusion/1711/df/86cbcfc533330d02.png",
-          desc: "泡温泉",
-        },{
-          id: "0008",
-          imgURL:
-            "http://img1.qunarzz.com/piao/fusion/1711/df/86cbcfc533330d02.png",
-          desc: "泡温泉",
-        },{
-          id: "0009",
-          imgURL:
-            "http://img1.qunarzz.com/piao/fusion/1711/df/86cbcfc533330d02.png",
-          desc: "滑雪",
-        },
-      ],
       swiperOption: {
         loop: true,
       },
@@ -86,7 +38,7 @@ export default {
   computed: {
     pages(){
       const pages=[];
-      this.iconsList.forEach((item,index)=>{
+      this.iconList.forEach((item,index)=>{
         // 计算图标应该出现在第几页
         const page=Math.floor(index/8);
         // 将每一页图标初始化成为一个空数组
