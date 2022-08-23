@@ -1,67 +1,67 @@
 <!--  -->
 <template>
   <div class="header">
-      <div class="header-left"><i class="iconfont">&#xe624;</i></div>
-      <div class="header-input">
-        <i class="iconfont">&#xe632;</i>
-        输入城市/景点/游玩主题
-        </div>
+    <div class="header-left"><i class="iconfont">&#xe624;</i></div>
+    <div class="header-input">
+      <i class="iconfont">&#xe632;</i>
+      输入城市/景点/游玩主题
+    </div>
+    <router-link to="/city">
       <div class="header-right">
-        {{this.city}}
+        {{ this.city }}
         <i class="iconfont arrow">&#xe600;</i>
-        </div>
+      </div>
+    </router-link>
   </div>
 </template>
 
 <script>
 export default {
-name:'Header',
-props:{
-  city:String
-},
-  data () {
-    return {
-    }
+  name: "Header",
+  props: {
+    city: String,
   },
-  components:{
+  data() {
+    return {};
   },
-}
+  components: {},
+};
 </script>
 
 <style  scoped>
-.header{
+.header {
   display: flex;
-  height: .86rem;
+  height: 0.86rem;
   color: #fff;
-  line-height: .86rem;
+  line-height: 0.86rem;
   background-color: #00bcd4;
 }
-.header-left{
-  width: .64rem;
-  height: .86rem;
+.header-left {
+  width: 0.64rem;
+  height: 0.86rem;
 }
-.iconfont{
+.iconfont {
   margin-left: 8px;
 }
-.header-input{
+.header-input {
   flex: 1;
-  height: .64rem;
-  line-height: .64rem;
+  height: 0.64rem;
+  line-height: 0.64rem;
   background: #fff;
   color: #ccc;
-  border-radius: .1rem;
-  margin-top: .12rem;
-  margin-left: .2rem;
-
+  border-radius: 0.1rem;
+  margin-top: 0.12rem;
+  margin-left: 0.2rem;
 }
-.header-right{
-  font-size: .28rem;
+.header-right {
+  font-size: 0.28rem;
   width: 1.24rem;
-  height: .86rem;
+  height: 0.86rem;
   text-align: center;
+  color: #fff;
 }
-.arrow{
-  margin-right: .04rem;
-  margin-left: .02rem;
+.arrow {
+  margin-right: 0.04rem;
+  margin-left: 0.02rem;
 }
 </style>
