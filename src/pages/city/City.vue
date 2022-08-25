@@ -3,8 +3,8 @@
   <div>
    <Header></Header>
    <Search></Search>
-   <List :cities='cities' :hotCities='hotCities'></List>
-   <Alphabet :cities='cities'></Alphabet>
+   <List :cities='cities' :hotCities='hotCities' :letter='letter'></List>
+   <Alphabet :cities='cities' @change="handleLetterChange"></Alphabet>
   </div>
 </template>
 
@@ -19,7 +19,8 @@ name:'City',
   data () {
     return {
       cities:{},
-      hotCities:[]
+      hotCities:[],
+      letter:''
     }
   },
   components:{
@@ -43,6 +44,9 @@ name:'City',
         this.cities=data.cities
         this.hotCities=data.hotCities
       }
+    },
+    handleLetterChange(letter){
+      this.letter=letter
     }
   },
 }

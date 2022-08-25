@@ -38,7 +38,8 @@ export default {
 name:'List',
 props:{
   cities:Object,
-  hotCities:Array
+  hotCities:Array,
+  letter:String
 },
 mounted(){
   this.scroll = new BetterScroll(this.$refs.wrapper)
@@ -48,6 +49,13 @@ watch:{
     this.$nextTick(function(){
       this.scroll.refresh()
     })
+  },
+  letter(){
+    // console.log(this.$refs[this.letter][0]);
+    if(this.letter){
+      const element = this.$refs[this.letter][0]
+      this.scroll.scrollToElement(element)
+    }
   }
 }
 
