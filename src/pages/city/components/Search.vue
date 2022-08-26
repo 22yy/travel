@@ -1,19 +1,72 @@
 <!--  -->
 <template>
+<div>
   <div class="search">
-    <input type="text" class="search-input" placeholder="请输入城市名或拼音">
+    <input type="text" v-model="keyword" class="search-input" placeholder="请输入城市名或拼音">
   </div>
+  <div class="search-content" v-show="keyword" ref="search">
+     <ul>
+      <li class="search-item border-bottom" 
+       v-for='item in list'
+       >{{item.name}}</li>
+      <li class="search-item border-bottom" v-show="hasNoData">
+        没有找到匹配数据
+      </li>
+     </ul>
+  </div>
+</div>
 </template>
 
 <script>
+import betterScroll from 'better-scroll'
 export default {
 name:'Search',
-  data () {
+props:{
+  cities:Object
+},
+mounted(){
+    this.scroll=new betterScroll(this.$refs.search)
+  },
+data () {
     return {
+      keyword:'',
+      list:[],
+      timer:null
     }
   },
-  components:{
+watch :{
+    keyword(){
+      if(this.timer){
+        clearTimeout(this.timer)
+      }
+      // if(!this.keyword){
+      //   this.list=[]
+      //   return 
+      // }
+      this.timer=setTimeout(()=>{
+        const result=[];
+        for(let i in this.cities){
+          this.cities[i].forEach((value)=>{
+            if(value.spell.indexOf(this.keyword)>-1 || value.name.indexOf(this.keyword)>-1){
+              result.push(value)
+            }
+          })
+        }
+        this.list=result
+      },100)
+    },
+    list(){
+    this.$nextTick(function(){
+      this.scroll.refresh()
+    })
   },
+  },
+computed:{
+  hasNoData(){
+    return !this.list.length
+    }
+  },
+
 }
 </script>
 
@@ -29,4 +82,17 @@ name:'Search',
     border-radius: .06rem
     padding 0 0.1rem
     box-sizing: border-box
+.search-content
+   position absolute 
+   top 1.58rem 
+   right: 0
+   left 0
+   bottom 0
+   z-index 1
+   overflow: hidden
+   .search-item
+     line-height .62rem
+     padding-left .2rem
+     color: #666
+     background-color #fff
 </style>
