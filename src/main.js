@@ -3,6 +3,7 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
+import store from './store'
 // 一像素边框
 import './assets/styles/border.css'
 import './assets/styles/reset.css'
@@ -26,6 +27,7 @@ fastclick.attach(document.body)
 new Vue({
     el: '#app',
     router,
+    store,
     components: { App },
     template: '<App/>'
 })

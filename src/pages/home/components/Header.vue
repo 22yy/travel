@@ -8,7 +8,7 @@
     </div>
     <router-link to="/city">
       <div class="header-right">
-        {{ this.city }}
+        {{ this.city}}
         <i class="iconfont arrow">&#xe600;</i>
       </div>
     </router-link>
@@ -16,32 +16,29 @@
 </template>
 
 <script>
+import {mapState} from 'vuex'
 export default {
   name: "Header",
-  props: {
-    city: String,
-  },
-  data() {
-    return {};
-  },
-  components: {},
+ computed:{
+  ...mapState(['city'])
+ }
 };
 </script>
 
 <style  scoped>
 .header {
   display: flex;
-  height: 0.86rem;
   color: #fff;
   line-height: 0.86rem;
   background-color: #00bcd4;
 }
 .header-left {
   width: 0.64rem;
-  height: 0.86rem;
+  float: left;
 }
 .iconfont {
-  margin-left: 8px;
+  text-align: center;
+  font-size: .4rem;
 }
 .header-input {
   flex: 1;
@@ -52,16 +49,17 @@ export default {
   border-radius: 0.1rem;
   margin-top: 0.12rem;
   margin-left: 0.2rem;
+  padding-left: .2rem;
 }
 .header-right {
-  font-size: 0.28rem;
-  width: 1.24rem;
-  height: 0.86rem;
+  min-width: 1.04rem;
+  padding: 0 .1rem;
+  float: right;
   text-align: center;
   color: #fff;
 }
 .arrow {
-  margin-right: 0.04rem;
-  margin-left: 0.02rem;
+  margin-left: -0.04rem;
+  font-size: .24rem;
 }
 </style>

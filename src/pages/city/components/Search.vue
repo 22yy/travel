@@ -4,10 +4,14 @@
   <div class="search">
     <input type="text" v-model="keyword" class="search-input" placeholder="请输入城市名或拼音">
   </div>
-  <div class="search-content" v-show="keyword" ref="search">
+  <div class="search-content" 
+  v-show="keyword" 
+  ref="search"
+  >
      <ul>
       <li class="search-item border-bottom" 
        v-for='item in list'
+       @click="handleChangeCity(item.name)"
        >{{item.name}}</li>
       <li class="search-item border-bottom" v-show="hasNoData">
         没有找到匹配数据
@@ -18,11 +22,19 @@
 </template>
 
 <script>
+import {mapMutations} from 'vuex'
 import betterScroll from 'better-scroll'
 export default {
 name:'Search',
 props:{
   cities:Object
+},
+methods:{
+  handleChangeCity(city){
+    this.changeCity(city)
+    this.$router.push('/')
+  },
+  ...mapMutations(['changeCity'])
 },
 mounted(){
     this.scroll=new betterScroll(this.$refs.search)
@@ -39,10 +51,10 @@ watch :{
       if(this.timer){
         clearTimeout(this.timer)
       }
-      // if(!this.keyword){
-      //   this.list=[]
-      //   return 
-      // }
+      if(!this.keyword){
+        this.list=[]
+        return 
+      }
       this.timer=setTimeout(()=>{
         const result=[];
         for(let i in this.cities){
@@ -76,6 +88,7 @@ computed:{
   background-color $bgColor
   height .86rem
   padding 0 0.1rem
+  touch-action: none
   .search-input
     width 100%
     height 0.62rem

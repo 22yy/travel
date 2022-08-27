@@ -11,12 +11,6 @@
 <script>
 export default {
 name:'Header',
-  data () {
-    return {
-    }
-  },
-  components:{
-  },
 }
 </script>
 
