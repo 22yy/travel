@@ -28,7 +28,7 @@ name:'Header',
   },
   methods:{
     handleScroll(){
-      console.log('scroll');
+      // console.log('scroll');
       const top=document.documentElement.scrollTop
       if(top>60){
         let opacity=top / 140
