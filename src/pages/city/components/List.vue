@@ -63,6 +63,9 @@ mounted(){
 watch:{
   cities(){
     this.$nextTick(function(){
+      if(!this.scroll){
+          this.scroll = new BetterScroll(this.$refs.wrapper)
+      }
       this.scroll.refresh()
     })
   },

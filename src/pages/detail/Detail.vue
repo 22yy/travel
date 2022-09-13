@@ -34,7 +34,7 @@ mounted(){
 },
 methods:{
   getDetailInfo(){
-    axios.get('/api/detail.json',{
+    axios.get('/static/mock/detail.json',{
       id:this.$route.params.id
     }).then(this.getDetailInfoSucc)
   },
